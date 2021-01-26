@@ -1,7 +1,6 @@
 import React, { createContext, useRef, useState, useContext } from 'react';
 import { Menu, SubMenuProps } from 'antd';
 import { useDrag, useDrop } from 'react-dnd';
-import DndProvider from '../DndProvider';
 import {
   DesktopOutlined,
   PieChartOutlined,
@@ -11,6 +10,7 @@ import {
 } from '@ant-design/icons';
 import { MenuItemProps } from 'antd/lib/menu/MenuItem';
 import { flatMapDeep, flattenDeep, isNil, isNumber } from 'lodash';
+import DndProvider from '../DndProvider';
 
 import update from 'immutability-helper';
 
@@ -309,30 +309,16 @@ const DragbleMenu: React.FC = () => {
                       icon={child.icon}
                       title={child.title}
                     />
-                    // <Menu.Item key={child.key}>{child.title}</Menu.Item>
                   ))}
                 </DragSubMenu>
               );
             } else {
-              // const [{ isDragging }, drag] = useDrag({
-              //   item: { type: "memu", id:item.key, },
-              //   collect: (monitor: any) => ({
-              //     isDragging: monitor.isDragging(),
-              //   }),
-              // })
-
               return (
                 <DragMenuItem
                   key={item.key}
                   icon={item.icon}
                   title={item.title}
                 />
-
-                // <Menu.Item key={item.key} icon={item.icon}>
-                //   <span style={{ background: "red" }}>{item.title}</span>
-                // </Menu.Item>
-
-                // <DragItem key={item.key} item={item}></DragItem>
               );
             }
           })}
