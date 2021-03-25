@@ -4,6 +4,7 @@
 
 1. antd menu 的排序拖拽尝试
 2. antv x6尝试
+3. 任意拖拽
 
 ## Getting Started
 
